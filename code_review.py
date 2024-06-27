@@ -137,7 +137,7 @@ class TablePage(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
-        self.rowLocator = By.XPATH("//table[@id='dataTable']/tbody/tr")
+        self.rowLocator = By.XPATH("//table[@id='dataTable']/tbody/tr") #this is not the proper way it should be "self.rowLocator = (By.XPATH, "//table[@id='dataTable']/tbody/tr")"
 
     def retrieveRowTexts(self):
         rows = self.driver.find_elements(self.rowLocator)
